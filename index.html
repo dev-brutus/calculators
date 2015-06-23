@@ -15,13 +15,25 @@
 </head>
 <body>
 <div class="container">
-    <ul class="nav nav-tabs" id="nav-tabs">
-        <li id="nav-tab-bmi"><a href="#">BMI</a></li>
-        <li id="nav-tab-pulse"><a href="#">Pulse</a></li>
+    <ul class="nav nav-tabs">
+        <li id="calculator-tab-bmi" class="calculator-tab"><a href="#">BMI</a></li>
+        <li id="calculator-tab-pulse" class="calculator-tab"><a href="#">Pulse</a></li>
     </ul>
-    <div id="interactive-form">
+    <form id="calculator-form-bmi" class="invisible calculator-form">
+        <div class="form-group">
+            <label for="calculator-bmi-height">Height (cm)</label>
+            <input type="number" class="form-control" id="calculator-bmi-height" placeholder="175">
+        </div>
+        <div class="form-group">
+            <label for="calculator-bmi-weight">Weight (kg)</label>
+            <input type="number" class="form-control" id="calculator-bmi-weight" placeholder="70">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" id="calculator-bmi-result" placeholder="Result" readonly>
+        </div>
+        <button type="button" class="btn btn-default" id="calculator-bmi-run">Run</button>
+    </form>
 
-    </div>
 </div>
 </body>
 </html>
