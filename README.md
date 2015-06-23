@@ -1,2 +1,2 @@
-# calculators
+# Calculators
 Various calculators
