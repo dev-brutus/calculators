@@ -1,12 +1,16 @@
 const app = {
     init: function () {
-        const tabs = $('ul.nav-tabs > li');
-        tabs.click(app.changePage)
+        var tabs = $('ul.nav-tabs > li');
+        tabs.click(function (event) {
+            tabs.removeClass("active");
+            app.changePage(event);
+        });
+        $('#nav-tab-bmi').click(function () {
+            alert("BMI!!!")
+        })
     },
 
     changePage: function (event) {
-        var delegateTarget = event.delegateTarget;
-        $('ul.nav-tabs > li').removeClass("active");
-        $(delegateTarget).addClass("active");
+        $(event.delegateTarget).addClass("active");
     }
 };
