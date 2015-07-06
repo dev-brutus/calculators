@@ -1,3 +1,8 @@
 .calculator-form {
+    /*padding-top: 15px;*/
+    /*float: left;*/
+}
+
+.row {
     padding-top: 15px;
 }
