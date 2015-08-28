@@ -25,10 +25,6 @@ const app = {
             $('#calculator-pulse-birthdate').prop('readonly', false);
         });
 
-        $('#calculator-pulse-age').blur(function () {
-            fillTable(parseInt($('#calculator-pulse-age').val()));
-        });
-
         const fillTable = function (age) {
             const max = 220 - age;
             const percent = max / 100.0;
@@ -49,13 +45,10 @@ const app = {
             $('#calculator-pulse-warm-min').text(result[50]);
             $('#calculator-pulse-rest-max').text(result[50]);
             $('#calculator-pulse-rest-min').text(result[35]);
-        }
-    },
+        };
 
-    changePage: function (event) {
-        var delegateTarget = event.delegateTarget;
-        $(delegateTarget).addClass("active");
-        var formId = delegateTarget.id.replace('tab', 'form');
-        $('#' + formId).removeClass("invisible")
+        $('#calculator-pulse-age').blur(function () {
+            fillTable(parseInt($('#calculator-pulse-age').val()));
+        });
     }
 };
