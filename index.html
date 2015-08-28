@@ -10,64 +10,70 @@
     <script>
         $(document).ready(function () {
             app.init();
-            $('#calculator-tab-pulse').trigger('click');
         })
     </script>
 </head>
 <body>
 <div class="container">
-    <ul class="nav nav-tabs">
-        <li id="calculator-tab-bmi" class="calculator-tab"><a href="#">BMI</a></li>
-        <li id="calculator-tab-pulse" class="calculator-tab"><a href="#">Pulse</a></li>
-    </ul>
     <div class="row">
-        <div class="col-lg-6">
-            <div id="calculator-form-bmi" class="invisible calculator-form">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <label for="calculator-bmi-height">Height (cm)</label>
-                        <input type="number" class="form-control" id="calculator-bmi-height" placeholder="175">
+        <div class="col-lg-8 col-sm-12">
+            <ul class="nav nav-tabs">
+                <li role="presentation" id="calculator-tab-bmi" class="calculator-tab active">
+                    <a href="#calculator-form-bmi" aria-controls="calculator-form-bmi" role="tab"
+                       data-toggle="tab">BMI</a>
+                </li>
+                <li role="presentation" id="calculator-tab-pulse" class="calculator-tab">
+                    <a href="#calculator-form-pulse" aria-controls="calculator-form-pulse" role="tab" data-toggle="tab">Pulse</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" id="calculator-form-bmi" class="calculator-form tab-pane active">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="calculator-bmi-height">Height (cm)</label>
+                            <input type="number" class="form-control" id="calculator-bmi-height" placeholder="175">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="calculator-bmi-weight">Weight (kg)</label>
+                            <input type="number" class="form-control" id="calculator-bmi-weight" placeholder="70">
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <label for="calculator-bmi-weight">Weight (kg)</label>
-                        <input type="number" class="form-control" id="calculator-bmi-weight" placeholder="70">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label for="calculator-bmi-result">Result</label>
+                            <input class="form-control" type="text" id="calculator-bmi-result" placeholder="Result"
+                                   readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-default" id="calculator-bmi-run">Run</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <label for="calculator-bmi-result">Result</label>
-                        <input class="form-control" type="text" id="calculator-bmi-result" placeholder="Result"
-                               readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <button type="button" class="btn btn-default" id="calculator-bmi-run">Run</button>
-                    </div>
-                </div>
-            </div>
-            <div id="calculator-form-pulse" class="invisible calculator-form">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <label for="calculator-pulse-age">Age</label>
+                <div role="tabpanel" id="calculator-form-pulse" class="calculator-form tab-pane">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="calculator-pulse-age">Age</label>
 
-                        <div class="input-group">
+                            <div class="input-group">
                     <span class="input-group-addon">
                         <!--suppress HtmlFormInputWithoutLabel -->
                         <input id="calculator-pulse-age-type" type="radio" value="age">
                     </span>
-                            <input id="calculator-pulse-age" type="text" class="form-control">
+                                <input id="calculator-pulse-age" type="text" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <label for="calculator-pulse-birthdate">Birth date</label>
+                        <div class="col-lg-6">
+                            <label for="calculator-pulse-birthdate">Birth date</label>
 
-                        <div class="input-group">
+                            <div class="input-group">
                     <span class="input-group-addon">
                         <!--suppress HtmlFormInputWithoutLabel -->
                         <input id="calculator-pulse-birthdate-type" type="radio" value="birthdate">
                     </span>
-                            <input id="calculator-pulse-birthdate" type="text" class="form-control">
+                                <input id="calculator-pulse-birthdate" type="text" class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>

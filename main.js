@@ -1,12 +1,8 @@
 const app = {
     init: function () {
-        var tabs = $('.calculator-tab');
-        var forms = $('.calculator-form');
-
-        tabs.click(function (event) {
-            tabs.removeClass("active");
-            forms.addClass("invisible")
-            app.changePage(event);
+        $('.calculator-tab a').click(function (event) {
+            event.preventDefault();
+            $(this).tab('show');
         });
 
         $('#calculator-bmi-run').click(function () {
