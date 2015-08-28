@@ -5,6 +5,11 @@ const app = {
             $(this).tab('show');
         });
 
+        $('.datepicker').datepicker({
+            format: 'dd.mm.yyyy',
+            orientation: 'bottom'
+        });
+
         $('#calculator-bmi-run').click(function () {
             var height = $('#calculator-bmi-height').val();
             var weight = $('#calculator-bmi-weight').val();
@@ -49,6 +54,15 @@ const app = {
 
         $('#calculator-pulse-age').blur(function () {
             fillTable(parseInt($('#calculator-pulse-age').val()));
+        });
+
+        $('#calculator-pulse-birthdate').blur(function () {
+            const date = $('#calculator-pulse-birthdate').datepicker('getDate');
+            const currentDate = new Date();
+
+            var diff = currentDate.getFullYear() - date.getFullYear();
+
+            fillTable(diff);
         });
     }
 };

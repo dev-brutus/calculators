@@ -3,9 +3,11 @@
 <head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="jquery/jquery-2.1.4.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="main.js"></script>
     <script>
         $(document).ready(function () {
@@ -73,7 +75,7 @@
                         <input id="calculator-pulse-birthdate-type" type="radio" name="calculator-pulse"
                                value="birthdate">
                     </span>
-                                <input id="calculator-pulse-birthdate" type="text" class="form-control">
+                                <input id="calculator-pulse-birthdate" data-provide="datepicker" type="text" class="datepicker form-control">
                             </div>
                         </div>
                     </div>
