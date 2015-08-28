@@ -35,7 +35,7 @@ const app = {
             const percent = max / 100.0;
             const result = {};
             [35, 50, 60, 70, 80, 90, 95].forEach(function (i) {
-                result[i] = percent * i;
+                result[i] = Math.round(percent * i);
             });
             $('#calculator-pulse-table-max').text(max);
             $('#calculator-pulse-red-max').text(result[95]);
