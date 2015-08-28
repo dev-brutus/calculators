@@ -13,13 +13,49 @@ const app = {
             var I = weight / ( h * h );
 
             $('#calculator-bmi-result').val(I)
-        })
+        });
+
+        $('#calculator-pulse-age-type').change(function () {
+            $('#calculator-pulse-birthdate').prop('readonly', true);
+            $('#calculator-pulse-age').prop('readonly', false);
+        });
+
+        $('#calculator-pulse-birthdate-type').change(function () {
+            $('#calculator-pulse-age').prop('readonly', true);
+            $('#calculator-pulse-birthdate').prop('readonly', false);
+        });
+
+        $('#calculator-pulse-age').blur(function () {
+            fillTable(parseInt($('#calculator-pulse-age').val()));
+        });
+
+        const fillTable = function (age) {
+            const max = 220 - age;
+            const percent = max / 100.0;
+            const result = {};
+            [35, 50, 60, 70, 80, 90, 95].forEach(function (i) {
+                result[i] = percent * i;
+            });
+            $('#calculator-pulse-table-max').text(max);
+            $('#calculator-pulse-red-max').text(result[95]);
+            $('#calculator-pulse-red-min').text(result[90]);
+            $('#calculator-pulse-endurance-max').text(result[90]);
+            $('#calculator-pulse-endurance-min').text(result[80]);
+            $('#calculator-pulse-aerobic-max').text(result[80]);
+            $('#calculator-pulse-aerobic-min').text(result[70]);
+            $('#calculator-pulse-fat-max').text(result[70]);
+            $('#calculator-pulse-fat-min').text(result[60]);
+            $('#calculator-pulse-warm-max').text(result[60]);
+            $('#calculator-pulse-warm-min').text(result[50]);
+            $('#calculator-pulse-rest-max').text(result[50]);
+            $('#calculator-pulse-rest-min').text(result[35]);
+        }
     },
 
     changePage: function (event) {
         var delegateTarget = event.delegateTarget;
         $(delegateTarget).addClass("active");
-        var formId = delegateTarget.id.replace('tab', 'form')
+        var formId = delegateTarget.id.replace('tab', 'form');
         $('#' + formId).removeClass("invisible")
     }
 };

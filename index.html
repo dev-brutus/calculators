@@ -59,22 +59,71 @@
                             <div class="input-group">
                     <span class="input-group-addon">
                         <!--suppress HtmlFormInputWithoutLabel -->
-                        <input id="calculator-pulse-age-type" type="radio" value="age">
+                        <input id="calculator-pulse-age-type" type="radio" name="calculator-pulse" value="age">
                     </span>
-                                <input id="calculator-pulse-age" type="text" class="form-control">
-                            </div>
+                            <input id="calculator-pulse-age" type="number" class="form-control">
                         </div>
-                        <div class="col-lg-6">
-                            <label for="calculator-pulse-birthdate">Birth date</label>
-
-                            <div class="input-group">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="calculator-pulse-birthdate">Birth date</label>
+                        <div class="input-group">
                     <span class="input-group-addon">
                         <!--suppress HtmlFormInputWithoutLabel -->
-                        <input id="calculator-pulse-birthdate-type" type="radio" value="birthdate">
+                        <input id="calculator-pulse-birthdate-type" type="radio" name="calculator-pulse" value="birthdate">
                     </span>
                                 <input id="calculator-pulse-birthdate" type="text" class="form-control">
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table  table-striped">
+                            <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Min</th>
+                                <th>Max</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Max (100%)</td>
+                                <td><span id="calculator-pulse-table-max">&nbsp;</span></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Red zone (90-95%)</td>
+                                <td><span id="calculator-pulse-red-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-red-max">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Endurance (80-90%)</td>
+                                <td><span id="calculator-pulse-endurance-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-endurance-max">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Aerobic (70-80%)</td>
+                                <td><span id="calculator-pulse-aerobic-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-aerobic-max">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fat burn (60-70%)</td>
+                                <td><span id="calculator-pulse-fat-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-fat-max">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Warm-up (50-60%)</td>
+                                <td><span id="calculator-pulse-warm-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-warm-max">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Rest (35-50%)</td>
+                                <td><span id="calculator-pulse-rest-min">&nbsp;</span></td>
+                                <td><span id="calculator-pulse-rest-max">&nbsp;</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
